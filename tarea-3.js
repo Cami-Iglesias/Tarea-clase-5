@@ -6,4 +6,25 @@
 // al apretar el botón "Calcular tiempo total", debe mostrar en un
 // <strong> pre-creado el tiempo total de los videos.
 
+const botonCalcularTotal = document.querySelector ('#boton-calcular-total');
 
+botonCalcularTotal.onclick = function () {
+    let horasDeVideo = document.querySelector (".horas");
+    let minutosDeVideo = document.querySelector (".minutos");
+    let segundosDeVideo = document.querySelector (".segundos");
+
+    /*const horasSegundos = horasDeVideo * 3600;
+    const minutosSegundos = minutosDeVideo * 60;
+    const segundos = segundos + minutosSegundos + horasSegundos;
+    */
+    
+    
+    
+    
+   
+
+    document.querySelector("#resultado").innerText = `${minutosTotales} : ${horasTotales}`
+  
+    return false;
+   
+}
