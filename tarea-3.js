@@ -8,23 +8,61 @@
 
 const botonCalcularTotal = document.querySelector ('#boton-calcular-total');
 
-botonCalcularTotal.onclick = function () {
-    let horasDeVideo = document.querySelector (".horas");
-    let minutosDeVideo = document.querySelector (".minutos");
-    let segundosDeVideo = document.querySelector (".segundos");
+const botonCalcularTotal = document.querySelector ('#boton-calcular-total');
+const botonSumar = document.querySelector("#boton-sumar");
 
-    /*const horasSegundos = horasDeVideo * 3600;
-    const minutosSegundos = minutosDeVideo * 60;
-    const segundos = segundos + minutosSegundos + horasSegundos;
-    */
-    
-    
-    
-    
-   
 
-    document.querySelector("#resultado").innerText = `${minutosTotales} : ${horasTotales}`
-  
-    return false;
-   
+
+let horasTotales;
+let minutosTotales;
+let segundosTotales;
+
+botonSumar.onclick = function(){
+    const horasVideo = document.querySelector("#horas").value;
+    const minutosVideo = document.querySelector("#minutos").vaule;
+    const segundosVideo = document.querySelector("#segundos").value;
+
+    horasTotales = sumarHoras (horasVideo);
+    minutosTotales = sumarMinutos (minutosVideo);
+    segundosTotales= sumarSegundos (segundosVideo);
+
+}
+
+function sumarHoras (horasVideo){
+    horasTotales += horasVideo;
+}
+function sumarMinutos (minutosVideo){
+    minutosTotales += minutosVideo;
+}
+function sumarSegundos (segundosVideo){
+    segundosTotales += segundosVideo;
+}
+
+
+
+botonCalcularTotal.onclick = function (horasTotales,minutosTotales,segundosTotales){
+    let horas;
+    let minutos;
+    let segundos;
+    if (segundosTotales>= 60){
+        minutos = trunc(segundosTotales / 60);
+        segundos = segundosTotales % 60;
+        minutosTotales += minutos;
+    }else{
+        segundos = segundosTotales;
+    }
+
+    if (minutosTotales>= 60){
+        horas = trunc(minutosTotales / 60);
+        minutos = minutosTotales % 60;
+        horasTotales += horas;
+    }else{
+        minutos = minutosTotales;
+    }
+
+
+    let mensaje = document.querySelector("#resultado").innerText;
+    mensaje = `El tiempo total de los videos del curso es:  ${horasTotales}:${minutos}:${segundos}`;
+
+
 }
