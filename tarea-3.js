@@ -6,7 +6,7 @@
 // al apretar el botón "Calcular tiempo total", debe mostrar en un
 // <strong> pre-creado el tiempo total de los videos.
 
-const botonCalcularTotal = document.querySelector ('#boton-calcular-total');
+
 
 const botonCalcularTotal = document.querySelector ('#boton-calcular-total');
 const botonSumar = document.querySelector("#boton-sumar");
